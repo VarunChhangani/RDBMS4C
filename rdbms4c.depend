@@ -1,0 +1,189 @@
+# depslib dependency file v1.0
+1338186843 source:c:\users\malacka\documents\github\database-in-memory\src\db.c
+	"db.h"
+
+1338186843 c:\users\malacka\documents\github\database-in-memory\src\db.h
+	"db_general.h"
+	"db_error.h"
+	"db_field.h"
+	"db_index.h"
+	"db_record.h"
+	"db_table.h"
+	"db_cursor.h"
+
+1338186843 c:\users\malacka\documents\github\database-in-memory\src\db_general.h
+
+1338186843 c:\users\malacka\documents\github\database-in-memory\src\db_error.h
+
+1338186843 c:\users\malacka\documents\github\database-in-memory\src\db_field.h
+	<stdlib.h>
+	"db_general.h"
+	"db_error.h"
+
+1338186843 c:\users\malacka\documents\github\database-in-memory\src\db_index.h
+	<stdlib.h>
+	"db_record.h"
+
+1338186843 c:\users\malacka\documents\github\database-in-memory\src\db_record.h
+	"db_general.h"
+	"db_field.h"
+
+1338186843 c:\users\malacka\documents\github\database-in-memory\src\db_table.h
+	"db_general.h"
+	"db_error.h"
+	"db_field.h"
+	"db_index.h"
+	"db_record.h"
+
+1338186843 c:\users\malacka\documents\github\database-in-memory\src\db_cursor.h
+	"db.h"
+
+1338186843 source:c:\users\malacka\documents\github\database-in-memory\src\db_cursor.c
+	<stdlib.h>
+	"db_cursor.h"
+
+1338186843 source:c:\users\malacka\documents\github\database-in-memory\src\db_error.c
+	"db_error.h"
+
+1338186843 source:c:\users\malacka\documents\github\database-in-memory\src\db_field.c
+	"db_field.h"
+
+1338186843 source:c:\users\malacka\documents\github\database-in-memory\src\db_general.c
+
+1338186843 source:c:\users\malacka\documents\github\database-in-memory\src\db_index.c
+	"db_index.h"
+
+1338186843 source:c:\users\malacka\documents\github\database-in-memory\src\db_record.c
+	"stdlib.h"
+	"db_record.h"
+
+1338186843 source:c:\users\malacka\documents\github\database-in-memory\src\db_string.c
+	<stdio.h>
+	<stdlib.h>
+	"db_string.h"
+	"str.h"
+
+1338186843 c:\users\malacka\documents\github\database-in-memory\src\db_string.h
+
+1338186843 c:\users\malacka\documents\github\database-in-memory\src\str.h
+
+1338186843 source:c:\users\malacka\documents\github\database-in-memory\src\db_table.c
+	<stdlib.h>
+	"db_table.h"
+
+1338186843 source:c:\users\malacka\documents\github\database-in-memory\src\str.c
+	<stdio.h>
+	"str.h"
+
+1338186843 source:c:\users\malacka\documents\github\database-in-memory\src\timer.c
+	"timer.h"
+	<stdlib.h>
+	<time.h>
+
+1338186843 c:\users\malacka\documents\github\database-in-memory\src\timer.h
+
+1338186843 source:c:\users\malacka\documents\github\database-in-memory\src\txt.c
+	"txt.h"
+
+1338186843 c:\users\malacka\documents\github\database-in-memory\src\txt.h
+	<stdio.h>
+	"db.h"
+
+1338319300 source:c:\users\malacka\documents\github\database-in-memory\test\main.c
+	"../src/db.h"
+	"../src/db_string.h"
+
+1338186843 source:c:\users\malacka\documents\github\rdbms4c\src\db.c
+	"db.h"
+
+1338186843 c:\users\malacka\documents\github\rdbms4c\src\db.h
+	"db_general.h"
+	"db_error.h"
+	"db_field.h"
+	"db_index.h"
+	"db_record.h"
+	"db_table.h"
+	"db_cursor.h"
+
+1338186843 c:\users\malacka\documents\github\rdbms4c\src\db_general.h
+
+1338186843 c:\users\malacka\documents\github\rdbms4c\src\db_error.h
+
+1338186843 c:\users\malacka\documents\github\rdbms4c\src\db_field.h
+	<stdlib.h>
+	"db_general.h"
+	"db_error.h"
+
+1338186843 c:\users\malacka\documents\github\rdbms4c\src\db_index.h
+	<stdlib.h>
+	"db_record.h"
+
+1338186843 c:\users\malacka\documents\github\rdbms4c\src\db_record.h
+	"db_general.h"
+	"db_field.h"
+
+1338186843 c:\users\malacka\documents\github\rdbms4c\src\db_table.h
+	"db_general.h"
+	"db_error.h"
+	"db_field.h"
+	"db_index.h"
+	"db_record.h"
+
+1338186843 c:\users\malacka\documents\github\rdbms4c\src\db_cursor.h
+	"db.h"
+
+1338186843 source:c:\users\malacka\documents\github\rdbms4c\src\db_cursor.c
+	<stdlib.h>
+	"db_cursor.h"
+
+1338186843 source:c:\users\malacka\documents\github\rdbms4c\src\db_error.c
+	"db_error.h"
+
+1338186843 source:c:\users\malacka\documents\github\rdbms4c\src\db_field.c
+	"db_field.h"
+
+1338186843 source:c:\users\malacka\documents\github\rdbms4c\src\db_general.c
+
+1338186843 source:c:\users\malacka\documents\github\rdbms4c\src\db_index.c
+	"db_index.h"
+
+1338186843 source:c:\users\malacka\documents\github\rdbms4c\src\db_record.c
+	"stdlib.h"
+	"db_record.h"
+
+1338186843 source:c:\users\malacka\documents\github\rdbms4c\src\db_string.c
+	<stdio.h>
+	<stdlib.h>
+	"db_string.h"
+	"str.h"
+
+1338186843 c:\users\malacka\documents\github\rdbms4c\src\db_string.h
+
+1338186843 c:\users\malacka\documents\github\rdbms4c\src\str.h
+
+1338186843 source:c:\users\malacka\documents\github\rdbms4c\src\db_table.c
+	<stdlib.h>
+	"db_table.h"
+
+1338186843 source:c:\users\malacka\documents\github\rdbms4c\src\str.c
+	<stdio.h>
+	"str.h"
+
+1338186843 source:c:\users\malacka\documents\github\rdbms4c\src\timer.c
+	"timer.h"
+	<stdlib.h>
+	<time.h>
+
+1338186843 c:\users\malacka\documents\github\rdbms4c\src\timer.h
+
+1338186843 source:c:\users\malacka\documents\github\rdbms4c\src\txt.c
+	"txt.h"
+
+1338186843 c:\users\malacka\documents\github\rdbms4c\src\txt.h
+	<stdio.h>
+	"db.h"
+
+1338319300 source:c:\users\malacka\documents\github\rdbms4c\test\main.c
+	"../src/db.h"
+	"../src/db_string.h"
+

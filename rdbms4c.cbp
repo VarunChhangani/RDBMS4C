@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="RDBMS4C" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="bin\Release\RDBMS4C" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="src\db.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src\db.h" />
+		<Unit filename="src\db_cursor.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src\db_cursor.h" />
+		<Unit filename="src\db_error.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src\db_error.h" />
+		<Unit filename="src\db_field.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src\db_field.h" />
+		<Unit filename="src\db_general.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src\db_general.h" />
+		<Unit filename="src\db_index.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src\db_index.h" />
+		<Unit filename="src\db_record.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src\db_record.h" />
+		<Unit filename="src\db_string.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src\db_string.h" />
+		<Unit filename="src\db_table.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src\db_table.h" />
+		<Unit filename="src\str.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src\str.h" />
+		<Unit filename="src\timer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src\timer.h" />
+		<Unit filename="src\txt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src\txt.h" />
+		<Unit filename="test\main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
