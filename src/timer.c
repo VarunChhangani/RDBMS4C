@@ -31,7 +31,7 @@ typedef struct sstimer
 
 void timer_action(__stimer* search_timer);
 
-__stimer* timer_list_first_element=NULL;
+static __stimer* timer_list_first_element=NULL;
 
 
 int create_timer(int pid, int p_seconds, __p_timer_function p_pf)

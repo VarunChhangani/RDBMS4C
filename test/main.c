@@ -18,6 +18,8 @@
 
 #include "../src/db.h"
 #include "../src/db_string.h"
+#include "therm_event_types.h"
+#include "therm_events.h"
 
 
 __db_record_definition v_folder_rdef;
@@ -38,6 +40,12 @@ __db_cursor v_file_cur1;
 __db_cursor v_file_cur2;
 __db_key v_file_key;
 __db_record v_file_rec;
+
+__therm_event_type_s therm_event_type;
+__therm_event_s therm_event;
+
+__db_cursor cursor;
+__db_record record;
 
 unsigned int v_exit = 0;
 
@@ -227,7 +235,7 @@ int main(int argc, char *argv[])
 
     if(v_file_rec != NULL)
     {
-        printf("%i -  %s %s.%s\n",
+        printf(" %i -  %s %s.%s\n\n",
                db_get_field_as_unsigned_int(v_file_rec, 0),
                db_get_field_as_char_array(db_get_field_as_foreign_key_record(v_file_rec, 1) , 1),
                db_get_field_as_char_array(v_file_rec, 2),
@@ -243,12 +251,59 @@ int main(int argc, char *argv[])
 
     timer = create_timer(1, 2000, timer_2s);
     timer2 = create_timer(1, 10000, timer_10s);
+
     while(!v_exit)
     {
         timer_listener();
     }
+
     drop_timer(timer);
 
+    therm_event_types_constructor();
+    therm_events_constructor();
+
+    therm_event_type.id = 1;
+    therm_event_type.name = db_string_create("WIND_UP");
+    therm_event_type_insert(&therm_event_type);
+    therm_event_type.id = 2;
+    therm_event_type.name = db_string_create("WIND_DOWN");
+    therm_event_type_insert(&therm_event_type);
+
+    cursor = therm_event_types_new_cursor();
+    __for_cursor_loop(record, cursor)
+    printf("Evnt type: %i -  %s\n",
+           db_get_field_as_unsigned_long(record, THERM_EVENT_TYPES_id),
+           db_get_field_as_char_array(record, THERM_EVENT_TYPES_name)
+          );
+    __end_loop(record, cursor)
+
+    db_drop_cursor(cursor);
+
+    therm_event.id = 1;
+    therm_event.event_type_fk = therm_event_type_find(1);
+    therm_event_insert(&therm_event);
+
+    therm_event.id = 2;
+    therm_event.event_type_fk = therm_event_type_find(1);
+    therm_event_insert(&therm_event);
+
+    cursor = therm_events_new_cursor();
+
+    __for_cursor_loop(record, cursor)
+    printf("Evnts: %i - %s \n",
+           db_get_field_as_unsigned_long(record, THERM_EVENTS_id),
+           db_get_field_as_char_array(
+               db_get_field_as_foreign_key_record(
+                   record, THERM_EVENTS_event_type_fk
+               ),
+               THERM_EVENT_TYPES_name)
+          );
+    __end_loop(record, cursor)
+
+    db_drop_cursor(cursor);
+
+    therm_events_desctructor();
+    therm_event_types_desctructor();
 
     return 0;
 }

@@ -53,9 +53,16 @@ void db_string_assign(__db_string p_s, const char *p_str)
     {
         if(p_s->str != NULL)
             free(p_s->str);
+        if(p_str == NULL)
+        {
+            p_s->str = NULL;
+        }
+        else
+        {
+            p_s->str = malloc(sizeof(char)*(strlen(p_str)+1));
+            strcpy(p_s->str, p_str);
+        }
 
-        p_s->str = malloc(sizeof(char)*(strlen(p_str)+1));
-        strcpy(p_s->str, p_str);
     }
 }
 

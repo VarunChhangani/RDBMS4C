@@ -39,9 +39,6 @@ __db_record_s_record* db_cursor_current(__db_cursor_s_cursor* p_cursor)
 {
     __db_record_s_record* v_result = NULL;
 
-    if(p_cursor->current >= p_cursor->table->count)
-        p_cursor->current = p_cursor->table->count - 1;
-
     v_result = db_table_get_record(p_cursor->table,
                                    p_cursor->index_position,
                                    p_cursor->current);
@@ -78,6 +75,9 @@ __db_record_s_record* db_cursor_first(__db_cursor_s_cursor* p_cursor)
 {
     __db_record_s_record* v_result = NULL;
     p_cursor->current = 0;
+    if(p_cursor->table->count == 0)
+        return NULL;
+
     v_result = db_table_get_record(p_cursor->table,
                                    p_cursor->index_position,
                                    p_cursor->current);
@@ -87,6 +87,11 @@ __db_record_s_record* db_cursor_first(__db_cursor_s_cursor* p_cursor)
 __db_record_s_record* db_cursor_last(__db_cursor_s_cursor* p_cursor)
 {
     __db_record_s_record* v_result = NULL;
+
+    if(p_cursor->table->count == 0){
+        p_cursor->current = 0;
+        return NULL;
+    }
 
     p_cursor->current = p_cursor->table->count-1;
     v_result = db_table_get_record(p_cursor->table,
@@ -294,5 +299,5 @@ void db_cursor_delete(__db_cursor_s_cursor* p_cursor)
                          p_cursor->index_position,
                          p_cursor->current);
     if(p_cursor->current >= p_cursor->table->count)
-       p_cursor->current--;
+        p_cursor->current--;
 }

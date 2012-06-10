@@ -96,7 +96,7 @@
 1338186843 source:c:\users\malacka\documents\github\rdbms4c\src\db.c
 	"db.h"
 
-1338186843 c:\users\malacka\documents\github\rdbms4c\src\db.h
+1339355122 c:\users\malacka\documents\github\rdbms4c\src\db.h
 	"db_general.h"
 	"db_error.h"
 	"db_field.h"
@@ -132,7 +132,7 @@
 1338186843 c:\users\malacka\documents\github\rdbms4c\src\db_cursor.h
 	"db.h"
 
-1338186843 source:c:\users\malacka\documents\github\rdbms4c\src\db_cursor.c
+1339355032 source:c:\users\malacka\documents\github\rdbms4c\src\db_cursor.c
 	<stdlib.h>
 	"db_cursor.h"
 
@@ -151,13 +151,13 @@
 	"stdlib.h"
 	"db_record.h"
 
-1338186843 source:c:\users\malacka\documents\github\rdbms4c\src\db_string.c
+1338727648 source:c:\users\malacka\documents\github\rdbms4c\src\db_string.c
 	<stdio.h>
 	<stdlib.h>
 	"db_string.h"
 	"str.h"
 
-1338186843 c:\users\malacka\documents\github\rdbms4c\src\db_string.h
+1338707630 c:\users\malacka\documents\github\rdbms4c\src\db_string.h
 
 1338186843 c:\users\malacka\documents\github\rdbms4c\src\str.h
 
@@ -169,7 +169,7 @@
 	<stdio.h>
 	"str.h"
 
-1338186843 source:c:\users\malacka\documents\github\rdbms4c\src\timer.c
+1339353661 source:c:\users\malacka\documents\github\rdbms4c\src\timer.c
 	"timer.h"
 	<stdlib.h>
 	<time.h>
@@ -183,7 +183,26 @@
 	<stdio.h>
 	"db.h"
 
-1338319300 source:c:\users\malacka\documents\github\rdbms4c\test\main.c
+1339356697 source:c:\users\malacka\documents\github\rdbms4c\test\main.c
 	"../src/db.h"
 	"../src/db_string.h"
+	"therm_event_types.h"
+	"therm_events.h"
+
+1339356215 source:c:\users\malacka\documents\github\rdbms4c\test\therm_event_types.c
+	"therm_event_types.h"
+	"../src/db_implement.h"
+
+1339269066 c:\users\malacka\documents\github\rdbms4c\test\therm_event_types.h
+	"../src/db.h"
+	"../src/db_string.h"
+
+1339353594 c:\users\malacka\documents\github\rdbms4c\src\db_implement.h
+
+1339356553 source:c:\users\malacka\documents\github\rdbms4c\test\therm_events.c
+	"therm_events.h"
+	"../src/db_implement.h"
+
+1339181477 c:\users\malacka\documents\github\rdbms4c\test\therm_events.h
+	"../src/db.h"
 

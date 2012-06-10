@@ -30,7 +30,7 @@ __db_string db_string_create(const char *p_str);
 
 void db_string_drop(__db_string p_db_string);
 
-void db_string_s_assign(__db_string p_s, const char *p_str);
+void db_string_assign(__db_string p_s, const char *p_str);
 
 void db_string_s_concat(__db_string p_s, const char *p_str);
 

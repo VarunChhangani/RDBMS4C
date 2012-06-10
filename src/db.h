@@ -85,7 +85,7 @@
 #define db_drop_table(p_tab) db_table_drop(p_tab)
 
 #define __for_cursor_loop(p_rec, p_cur) p_rec = db_cursor_first(p_cur);\
-                         do {
+                         if(p_rec != NULL)do {
 
 
 #define __end_loop(p_rec, p_cur)\

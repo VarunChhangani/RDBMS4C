@@ -42,6 +42,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src\db_general.h" />
+		<Unit filename="src\db_implement.h" />
 		<Unit filename="src\db_index.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -73,6 +74,16 @@
 		<Unit filename="test\main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="test\therm_event_types.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="test\therm_event_types.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="test\therm_events.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="test\therm_events.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
