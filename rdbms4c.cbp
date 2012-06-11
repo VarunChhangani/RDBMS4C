@@ -71,19 +71,17 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src\txt.h" />
+		<Unit filename="test\database\therm_event_types.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="test\database\therm_event_types.h" />
+		<Unit filename="test\database\therm_events.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="test\database\therm_events.h" />
 		<Unit filename="test\main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="test\therm_event_types.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="test\therm_event_types.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="test\therm_events.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="test\therm_events.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

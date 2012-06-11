@@ -17,7 +17,7 @@
 */
 
 #include "therm_event_types.h"
-#include "../src/db_implement.h"
+#include "../../src/db_implement.h"
 
 void record_to_therm_event_type(__db_record record, __therm_event_type_s* therm_event_type);
 

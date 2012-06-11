@@ -183,11 +183,11 @@
 	<stdio.h>
 	"db.h"
 
-1339356697 source:c:\users\malacka\documents\github\rdbms4c\test\main.c
+1339437499 source:c:\users\malacka\documents\github\rdbms4c\test\main.c
 	"../src/db.h"
 	"../src/db_string.h"
-	"therm_event_types.h"
-	"therm_events.h"
+	"database/therm_event_types.h"
+	"database/therm_events.h"
 
 1339356215 source:c:\users\malacka\documents\github\rdbms4c\test\therm_event_types.c
 	"therm_event_types.h"
@@ -205,4 +205,19 @@
 
 1339181477 c:\users\malacka\documents\github\rdbms4c\test\therm_events.h
 	"../src/db.h"
+
+1339436814 source:c:\users\malacka\documents\github\rdbms4c\test\database\therm_event_types.c
+	"therm_event_types.h"
+	"../../src/db_implement.h"
+
+1339436785 c:\users\malacka\documents\github\rdbms4c\test\database\therm_event_types.h
+	"../../src/db.h"
+	"../../src/db_string.h"
+
+1339436801 source:c:\users\malacka\documents\github\rdbms4c\test\database\therm_events.c
+	"therm_events.h"
+	"../../src/db_implement.h"
+
+1339436748 c:\users\malacka\documents\github\rdbms4c\test\database\therm_events.h
+	"../../src/db.h"
 

@@ -1,5 +1,5 @@
 /*
-    blogcprog.com - therm_event_types
+    blogcprog.com - therm_events
     Copyright (C) 2012  blogcprog.com
 
     This program is free software: you can redistribute it and/or modify
@@ -16,30 +16,31 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef THERM_EVENT_TYPES_H_INCLUDED
-#define THERM_EVENT_TYPES_H_INCLUDED
+#ifndef THERM_EVENTS_H_INCLUDED
+#define THERM_EVENTS_H_INCLUDED
 
-#include "../src/db.h"
-#include "../src/db_string.h"
+#include "../../src/db.h"
 
-#define THERM_EVENT_TYPES_id 0
-#define THERM_EVENT_TYPES_name 1
+#define THERM_EVENTS_id 0
+#define THERM_EVENTS_event_type_fk 1
 
-typedef struct __therm_event_type_ss {
-    unsigned char id;
-    __db_string name;
-} __therm_event_type_s;
+typedef struct __therm_event_ss {
+    unsigned long id;
+    __db_record event_type_fk;
+
+} __therm_event_s;
 
 
-void therm_event_types_constructor();
-void therm_event_types_desctructor();
+void therm_event_constructor();
+void therm_event_desctructor();
 
-void therm_event_type_insert(__therm_event_type_s* therm_event_type);
+void therm_event_insert(__therm_event_s* therm_event);
 
-__db_record therm_event_type_find(unsigned char id);
+__db_record therm_event_find(unsigned char id);
 
-void therm_event_type_clear(__therm_event_type_s* therm_event_type);
+void therm_event_clear(__therm_event_s* therm_event);
 
-__db_cursor therm_event_types_new_cursor();
+__db_cursor therm_events_new_cursor();
+
 
 #endif
