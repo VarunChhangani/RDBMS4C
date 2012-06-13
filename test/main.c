@@ -27,17 +27,41 @@ __therm_event_s therm_event;
 __db_cursor cursor;
 __db_record record;
 
-unsigned int v_exit = 0;
+unsigned long id = 2;
 
 void timer_2s(void)
 {
-    printf("Timer 2 s\n");
+    printf("Creating event...\n");
+    therm_event.id = ++id;
+    therm_event.event_type_fk = therm_event_type_find(1);
+    therm_event_insert(&therm_event);
+    printf("Done.\n");
 }
 
 void timer_10s(void)
 {
-    printf("Timer 10 s\n");
-    v_exit = 1;
+    printf("Reporting events...\n");
+
+    cursor = therm_events_new_cursor();
+    __for_cursor_loop(record, cursor)
+    printf("Evnts: %i - %s \n",
+           db_get_field_as_unsigned_long(record, THERM_EVENTS_id),
+           db_get_field_as_char_array(
+               db_get_field_as_foreign_key_record(
+                   record, THERM_EVENTS_event_type_fk
+               ),
+               THERM_EVENT_TYPES_name)
+          );
+    __end_loop(record, cursor)
+
+    db_drop_cursor(cursor);
+    printf("Done.\n\n");
+}
+
+void timer_10m(void)
+{
+    printf("Timer 10 m\n");
+    timer_pool_exit();
 }
 
 int main(int argc, char *argv[])
@@ -48,6 +72,7 @@ int main(int argc, char *argv[])
     __db_string v_s1, v_s2;
     int timer;
     int timer2;
+    int timer10m;
 
     printf("String examles\n");
 
@@ -104,7 +129,7 @@ int main(int argc, char *argv[])
 
     cursor = therm_event_types_new_cursor();
     __for_cursor_loop(record, cursor)
-        printf("Evnt type: %i -  %s\n",
+    printf("Evnt type: %i -  %s\n",
            db_get_field_as_unsigned_long(record, THERM_EVENT_TYPES_id),
            db_get_field_as_char_array(record, THERM_EVENT_TYPES_name)
           );
@@ -113,50 +138,22 @@ int main(int argc, char *argv[])
     db_drop_cursor(cursor);
     printf("Done.\n\n");
 
-    printf("Creating events...\n");
-
-    therm_event.id = 1;
-    therm_event.event_type_fk = therm_event_type_find(1);
-    therm_event_insert(&therm_event);
-
-    therm_event.id = 2;
-    therm_event.event_type_fk = therm_event_type_find(1);
-    therm_event_insert(&therm_event);
-    printf("Done.\n\n");
-
-    printf("Reporting events...\n");
-
-    cursor = therm_events_new_cursor();
-    __for_cursor_loop(record, cursor)
-        printf("Evnts: %i - %s \n",
-           db_get_field_as_unsigned_long(record, THERM_EVENTS_id),
-           db_get_field_as_char_array(
-               db_get_field_as_foreign_key_record(
-                   record, THERM_EVENTS_event_type_fk
-               ),
-               THERM_EVENT_TYPES_name)
-          );
-    __end_loop(record, cursor)
-
-    db_drop_cursor(cursor);
-    printf("Done.\n\n");
-
-    printf("Droping database...\n");
-    therm_events_desctructor();
-    therm_event_types_desctructor();
-    printf("Done.\n\n");
-
     printf("Starting timer pool...\n");
 
     timer = create_timer(1, 2000, timer_2s);
     timer2 = create_timer(1, 10000, timer_10s);
+    timer10m = create_timer(1, 1000*60*60, timer_10m);
 
-    while(!v_exit)
-    {
-        timer_listener();
-    }
+    timer_pool();
 
     drop_timer(timer);
+    drop_timer(timer2);
+    drop_timer(timer10m);
+
+    printf("Droping database...\n");
+    therm_events_desctructor();
+    therm_event_types_desctructor();
+
     printf("Done.\n\n");
 
     return 0;

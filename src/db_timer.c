@@ -1,5 +1,5 @@
 /*
-    blogcprog.com - timer.c
+    blogcprog.com - db_timer.c
     Copyright (C) 2010  blogcprog.com
 
     This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include"timer.h"
+#include"db_timer.h"
 #include<stdlib.h>
 #include<time.h>
 
@@ -32,6 +32,7 @@ typedef struct sstimer
 void timer_action(__stimer* search_timer);
 
 static __stimer* timer_list_first_element=NULL;
+static unsigned char v_exit = 0;
 
 
 int create_timer(int pid, int p_seconds, __p_timer_function p_pf)
@@ -106,3 +107,15 @@ void drop_timer(int pid)
     }
 }
 
+void timer_pool(){
+    v_exit = 0;
+    while(!v_exit)
+    {
+        timer_listener();
+        ; /*NOP*/
+    }
+}
+
+void timer_pool_exit(){
+    v_exit = 1;
+}

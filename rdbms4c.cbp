@@ -59,14 +59,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src\db_table.h" />
+		<Unit filename="src\db_timer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src\db_timer.h" />
 		<Unit filename="src\str.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src\str.h" />
-		<Unit filename="src\timer.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src\timer.h" />
 		<Unit filename="src\txt.c">
 			<Option compilerVar="CC" />
 		</Unit>
