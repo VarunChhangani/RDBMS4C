@@ -70,3 +70,11 @@ __db_cursor therm_event_types_new_cursor()
 {
     return db_create_cursor(table, PRIMARY_KEY);
 }
+
+__db_table therm_event_type_foreign_key_parent(){
+    return table;
+}
+
+long therm_event_types_count(){
+    return table->count;
+}

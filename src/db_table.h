@@ -35,6 +35,7 @@ typedef struct __db_table_ss_table
     __db_index_record_position count;
     struct __db_table_ss_table** child_tables;
     int num_of_child_tables;
+    long *auto_increment_id;
 } __db_table_s_table;
 
 
@@ -80,5 +81,7 @@ void db_table_delete_from(__db_table_s_table* p_table,
 __db_record_s_record* db_table_get_record(__db_table_s_table* p_table,
         const __db_index_position p_index_position,
         const __db_index_record_position p_position);
+
+void db_table_auto_increment(__db_table_s_table* p_table);
 
 #endif

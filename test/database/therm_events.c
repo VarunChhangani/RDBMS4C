@@ -18,6 +18,7 @@
 
 #include "therm_events.h"
 #include "../../src/db_implement.h"
+#include "therm_event_types.h"
 
 void therm_events_constructor()
 {
@@ -30,6 +31,11 @@ void therm_events_constructor()
     db_set_index_field(primary_key, THERM_EVENTS_id, PRIMARY_KEY, __asc);
 
     table = db_create_table(record_definition, primary_key);
+
+    db_set_foreign_key_table(table, THERM_EVENTS_event_type_fk, therm_event_type_foreign_key_parent());
+
+    db_table_auto_increment(table);
+
     cursor = db_create_cursor(table, PRIMARY_KEY);
 }
 
@@ -42,6 +48,7 @@ void therm_events_desctructor()
 void therm_event_insert(__therm_event_s* therm_event)
 {
     __db_field db_field = db_insert_preparation(record_definition->num_of_fields);
+    therm_event->id = 0;
     db_insert_set_field(record_definition, db_field, THERM_EVENTS_id, &therm_event->id);
     db_insert_set_field(record_definition, db_field, THERM_EVENTS_event_type_fk, therm_event->event_type_fk);
     db_insert_into(cursor, db_field);
@@ -69,4 +76,6 @@ __db_cursor therm_events_new_cursor()
     return db_create_cursor(table, PRIMARY_KEY);
 }
 
-
+long therm_events_count(){
+    return table->count;
+}

@@ -41,4 +41,8 @@ void therm_event_type_clear(__therm_event_type_s* therm_event_type);
 
 __db_cursor therm_event_types_new_cursor();
 
+__db_table therm_event_type_foreign_key_parent();
+
+long therm_event_types_count();
+
 #endif

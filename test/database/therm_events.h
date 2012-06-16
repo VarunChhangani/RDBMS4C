@@ -42,5 +42,7 @@ void therm_event_clear(__therm_event_s* therm_event);
 
 __db_cursor therm_events_new_cursor();
 
+long therm_events_count();
+
 
 #endif

@@ -124,7 +124,7 @@
 	"db_general.h"
 	"db_field.h"
 
-1338186843 c:\users\malacka\documents\github\rdbms4c\src\db_table.h
+1339871319 c:\users\malacka\documents\github\rdbms4c\src\db_table.h
 	"db_general.h"
 	"db_error.h"
 	"db_field.h"
@@ -134,7 +134,7 @@
 1338186843 c:\users\malacka\documents\github\rdbms4c\src\db_cursor.h
 	"db.h"
 
-1339355032 source:c:\users\malacka\documents\github\rdbms4c\src\db_cursor.c
+1339868204 source:c:\users\malacka\documents\github\rdbms4c\src\db_cursor.c
 	<stdlib.h>
 	"db_cursor.h"
 
@@ -163,7 +163,7 @@
 
 1338186843 c:\users\malacka\documents\github\rdbms4c\src\str.h
 
-1339850214 source:c:\users\malacka\documents\github\rdbms4c\src\db_table.c
+1339874718 source:c:\users\malacka\documents\github\rdbms4c\src\db_table.c
 	<stdlib.h>
 	"db_table.h"
 
@@ -185,7 +185,7 @@
 	<stdio.h>
 	"db.h"
 
-1339827432 source:c:\users\malacka\documents\github\rdbms4c\test\main.c
+1339873575 source:c:\users\malacka\documents\github\rdbms4c\test\main.c
 	"../src/db.h"
 	"database/therm_event_types.h"
 	"database/therm_events.h"
@@ -207,18 +207,19 @@
 1339181477 c:\users\malacka\documents\github\rdbms4c\test\therm_events.h
 	"../src/db.h"
 
-1339706616 source:c:\users\malacka\documents\github\rdbms4c\test\database\therm_event_types.c
+1339868740 source:c:\users\malacka\documents\github\rdbms4c\test\database\therm_event_types.c
 	"therm_event_types.h"
 	"../../src/db_implement.h"
 
-1339824402 c:\users\malacka\documents\github\rdbms4c\test\database\therm_event_types.h
+1339868729 c:\users\malacka\documents\github\rdbms4c\test\database\therm_event_types.h
 	"../../src/db.h"
 
-1339706597 source:c:\users\malacka\documents\github\rdbms4c\test\database\therm_events.c
+1339873390 source:c:\users\malacka\documents\github\rdbms4c\test\database\therm_events.c
 	"therm_events.h"
 	"../../src/db_implement.h"
+	"therm_event_types.h"
 
-1339824409 c:\users\malacka\documents\github\rdbms4c\test\database\therm_events.h
+1339868641 c:\users\malacka\documents\github\rdbms4c\test\database\therm_events.h
 	"../../src/db.h"
 
 1339827325 source:c:\users\malacka\documents\github\rdbms4c\src\db_timer.c

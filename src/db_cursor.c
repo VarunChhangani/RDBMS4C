@@ -88,7 +88,8 @@ __db_record_s_record* db_cursor_last(__db_cursor_s_cursor* p_cursor)
 {
     __db_record_s_record* v_result = NULL;
 
-    if(p_cursor->table->count == 0){
+    if(p_cursor->table->count == 0)
+    {
         p_cursor->current = 0;
         return NULL;
     }

@@ -26,15 +26,17 @@ __therm_event_s therm_event;
 __db_cursor cursor;
 __db_record record;
 
-unsigned long id = 2;
-
 void timer_2s(int pid)
 {
+    int i;
     printf("Timer: %i\n", pid);
-    printf("Creating event...\n");
-    therm_event.id = ++id;
-    therm_event.event_type_fk = therm_event_type_find(1);
-    therm_event_insert(&therm_event);
+    printf("Creating event... num of rec: %i\n", therm_events_count());
+    for(i=0; i<100000; i++)
+    {
+        therm_event.event_type_fk = therm_event_type_find(1);
+        therm_event_insert(&therm_event);
+    }
+
     printf("Done.\n");
 }
 
@@ -134,7 +136,7 @@ int main(int argc, char *argv[])
     cursor = therm_event_types_new_cursor();
     __for_cursor_loop(record, cursor)
     printf("Evnt type: %i -  %s\n",
-           db_get_field_as_unsigned_long(record, THERM_EVENT_TYPES_id),
+           db_get_field_as_unsigned_char(record, THERM_EVENT_TYPES_id),
            db_get_field_as_char_array(record, THERM_EVENT_TYPES_name)
           );
     __end_loop(record, cursor)

@@ -64,6 +64,7 @@ __db_table_s_table* db_table_create(__db_record_s_definition* p_record_definitio
         v_table->last_record = NULL;
         v_table->name = NULL;
         v_table->count = 0;
+        v_table->auto_increment_id = NULL;
         v_table->record_definition = p_record_definition;
         v_table->indexes = malloc(sizeof(__db_index_s_index) * 32);
         v_table->child_tables = NULL;
@@ -390,6 +391,21 @@ unsigned char db_table_is_unique_field(__db_table_s_table* p_table,
     return v_ret;
 }
 
+
+unsigned char db_table_has_unique_field(__db_table_s_table* p_table)
+{
+    unsigned char v_ret = 0;
+    int i;
+    i=1;
+    while(!v_ret && i < 32)
+        if(p_table->indexes[i].enabled && p_table->indexes[i].index_type == __unique)
+            v_ret = i;
+        else
+            i++;
+    return v_ret;
+}
+
+
 unsigned char db_table_is_fk_field(__db_table_s_table* p_table,
                                    __db_field_position p_field_position)
 {
@@ -408,6 +424,7 @@ unsigned char __unique_exists(__db_table_s_table* p_table,
     unsigned long l = 0;
     unsigned int i;
     __db_record_s_record* v_record;
+
     db_error_reset();
     v_record = p_table->first_record;
     while(v_record!=NULL && !v_result && l < p_table->count)
@@ -415,9 +432,10 @@ unsigned char __unique_exists(__db_table_s_table* p_table,
         if(db_table_compare_records(p_record, v_record, p_table, 0)==0)
             v_result = 1;
         else
-            for(i = 1; i < 32; i++)
-                if(p_table->indexes[i].enabled && p_table->indexes[i].index_type == __unique)
-                    if(db_table_compare_records(p_record, v_record, p_table, i)==0){
+            for(i = 0; i < 32; i++)
+                if(p_table->indexes[i].enabled && ((p_table->indexes[i].index_type == __unique) || (p_table->indexes[i].index_type == __primary) ))
+                    if(db_table_compare_records(p_record, v_record, p_table, i)==0)
+                    {
                         v_result = 1;
                         break;
                     }
@@ -435,6 +453,7 @@ unsigned char __not_null_check(__db_table_s_table* p_table,
     unsigned char v_ret = 1;
     int v_i;
     v_i = 0;
+
     while(v_i < p_table->record_definition->num_of_fields && v_ret)
     {
         if(p_table->record_definition->fields_definition[v_i].null_definition
@@ -449,23 +468,6 @@ unsigned char __not_null_check(__db_table_s_table* p_table,
     return v_ret;
 }
 
-void db_table_drop_column(__db_table_s_table* p_table,
-                          __db_field_position p_field_position)
-{
-    int i, j;
-    __db_record_s_definition* new_record_definition;
-
-    new_record_definition = db_record_create_definition(p_table->record_definition->num_of_fields - 1);
-    for(i = 0; i < p_table->record_definition->num_of_fields; i++)
-    {
-        // Under construction
-    }
-
-    p_table->record_definition = new_record_definition;
-    p_table->record_definition->num_of_fields--;
-
-}
-
 __db_record_s_record* db_table_insert_into(__db_table_s_table* p_table,
         __db_field_s_field* p_fields)
 {
@@ -474,8 +476,11 @@ __db_record_s_record* db_table_insert_into(__db_table_s_table* p_table,
     db_error_reset();
     if(__not_null_check(p_table, p_fields))
     {
+        if(p_table->auto_increment_id != NULL)
+            *(unsigned long*)p_fields[p_table->indexes[0].index_fields_definition[0].field_index].field = ++(*p_table->auto_increment_id);
+
         v_record = db_record_create(p_table->last_record, NULL, p_fields);
-        if(!__unique_exists(p_table, v_record))
+        if( ((p_table->auto_increment_id != NULL) && (!db_table_has_unique_field(p_table))) || !__unique_exists(p_table, v_record))
         {
             p_table->count++;
             __disable_indexes(p_table);
@@ -596,5 +601,16 @@ __db_record_s_record* db_table_get_record(__db_table_s_table* p_table,
     v_result = v_index[p_position];
 
     return v_result;
+}
+
+void db_table_auto_increment(__db_table_s_table* p_table)
+{
+    if(p_table->auto_increment_id == NULL &&
+            p_table->indexes[0].num_of_index_fields == 1 &&
+            p_table->record_definition->fields_definition[p_table->indexes[0].index_fields_definition[0].field_index].data_type == __unsigned_long)
+    {
+        p_table->auto_increment_id = malloc(sizeof(unsigned long));
+        *(p_table->auto_increment_id) = 0;
+    }
 }
 
