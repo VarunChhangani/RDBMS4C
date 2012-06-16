@@ -55,7 +55,7 @@
     db_table_set_foreign_key(p_tab, p_fld_pos, p_fk_tab);
 
 #define db_create_index(p_num_of_fld, p_idx_typ) db_index_create(p_num_of_fld, p_idx_typ, NULL)
-#define db_create_function_based_index(p_num_of_fld, p_idx_typ, p_f) db_index_create(p_num_of_fld, p_idx_typ, p_f)
+#define db_create_function_based_index(p_idx_typ, p_f) db_index_create(0, p_idx_typ, p_f)
 #define db_set_table_index(p_tab, p_pos, p_idx) db_table_set_index(p_tab, p_pos, p_idx)
 
 #define db_create_cursor(p_tab, p_idx) db_cursor_create(p_tab, p_idx)

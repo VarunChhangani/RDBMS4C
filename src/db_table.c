@@ -145,6 +145,10 @@ signed char db_table_compare_records(const __db_record_s_record* p_record_1,
 
     int i, v_field_index;
     __db_field_data_type v_data_type;
+
+    if(p_table->indexes[p_index_position].function_based_index != NULL)
+        return (*p_table->indexes[p_index_position].function_based_index)(p_record_1, p_record_2);
+
     i = -1;
     while(++i < p_table->indexes[p_index_position].num_of_index_fields && v_result == 0)
     {

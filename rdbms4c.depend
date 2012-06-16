@@ -96,7 +96,7 @@
 1338186843 source:c:\users\malacka\documents\github\rdbms4c\src\db.c
 	"db.h"
 
-1339824263 c:\users\malacka\documents\github\rdbms4c\src\db.h
+1339850475 c:\users\malacka\documents\github\rdbms4c\src\db.h
 	"db_general.h"
 	"db_error.h"
 	"db_field.h"
@@ -163,7 +163,7 @@
 
 1338186843 c:\users\malacka\documents\github\rdbms4c\src\str.h
 
-1338186843 source:c:\users\malacka\documents\github\rdbms4c\src\db_table.c
+1339850214 source:c:\users\malacka\documents\github\rdbms4c\src\db_table.c
 	<stdlib.h>
 	"db_table.h"
 
@@ -185,7 +185,7 @@
 	<stdio.h>
 	"db.h"
 
-1339827373 source:c:\users\malacka\documents\github\rdbms4c\test\main.c
+1339827432 source:c:\users\malacka\documents\github\rdbms4c\test\main.c
 	"../src/db.h"
 	"database/therm_event_types.h"
 	"database/therm_events.h"
