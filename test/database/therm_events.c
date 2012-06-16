@@ -19,8 +19,6 @@
 #include "therm_events.h"
 #include "../../src/db_implement.h"
 
-void record_to_therm_event(__db_record record, __therm_event_s* therm_event);
-
 void therm_events_constructor()
 {
     __db_primary_key primary_key;

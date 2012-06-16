@@ -2,7 +2,7 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Release" />
 	<File name="src\db.h" open="0" top="0" tabpos="2">
-		<Cursor position="933" topLine="0" />
+		<Cursor position="985" topLine="0" />
 	</File>
 	<File name="src\db_cursor.c" open="0" top="0" tabpos="4">
 		<Cursor position="3011" topLine="68" />
@@ -52,11 +52,11 @@
 	<File name="src\db_table.h" open="0" top="0" tabpos="0">
 		<Cursor position="3210" topLine="43" />
 	</File>
-	<File name="src\db_timer.c" open="1" top="0" tabpos="3">
-		<Cursor position="3144" topLine="29" />
+	<File name="src\db_timer.c" open="0" top="0" tabpos="3">
+		<Cursor position="787" topLine="54" />
 	</File>
 	<File name="src\db_timer.h" open="1" top="0" tabpos="2">
-		<Cursor position="967" topLine="0" />
+		<Cursor position="964" topLine="0" />
 	</File>
 	<File name="src\str.c" open="0" top="0" tabpos="7">
 		<Cursor position="2595" topLine="83" />
@@ -68,18 +68,18 @@
 		<Cursor position="740" topLine="86" />
 	</File>
 	<File name="test\database\therm_event_types.c" open="0" top="0" tabpos="0">
-		<Cursor position="801" topLine="0" />
+		<Cursor position="1573" topLine="0" />
 	</File>
-	<File name="test\database\therm_event_types.h" open="0" top="0" tabpos="0">
-		<Cursor position="847" topLine="0" />
+	<File name="test\database\therm_event_types.h" open="0" top="0" tabpos="2">
+		<Cursor position="847" topLine="1" />
 	</File>
 	<File name="test\database\therm_events.c" open="0" top="0" tabpos="0">
-		<Cursor position="791" topLine="0" />
+		<Cursor position="813" topLine="0" />
 	</File>
 	<File name="test\database\therm_events.h" open="0" top="0" tabpos="0">
-		<Cursor position="842" topLine="0" />
+		<Cursor position="832" topLine="0" />
 	</File>
 	<File name="test\main.c" open="1" top="1" tabpos="1">
-		<Cursor position="1551" topLine="36" />
+		<Cursor position="1980" topLine="45" />
 	</File>
 </CodeBlocks_layout_file>

@@ -96,7 +96,7 @@
 1338186843 source:c:\users\malacka\documents\github\rdbms4c\src\db.c
 	"db.h"
 
-1339355122 c:\users\malacka\documents\github\rdbms4c\src\db.h
+1339824263 c:\users\malacka\documents\github\rdbms4c\src\db.h
 	"db_general.h"
 	"db_error.h"
 	"db_field.h"
@@ -104,6 +104,8 @@
 	"db_record.h"
 	"db_table.h"
 	"db_cursor.h"
+	"db_string.h"
+	"db_timer.h"
 
 1338186843 c:\users\malacka\documents\github\rdbms4c\src\db_general.h
 
@@ -183,9 +185,8 @@
 	<stdio.h>
 	"db.h"
 
-1339617302 source:c:\users\malacka\documents\github\rdbms4c\test\main.c
+1339827373 source:c:\users\malacka\documents\github\rdbms4c\test\main.c
 	"../src/db.h"
-	"../src/db_string.h"
 	"database/therm_event_types.h"
 	"database/therm_events.h"
 
@@ -206,25 +207,24 @@
 1339181477 c:\users\malacka\documents\github\rdbms4c\test\therm_events.h
 	"../src/db.h"
 
-1339436814 source:c:\users\malacka\documents\github\rdbms4c\test\database\therm_event_types.c
+1339706616 source:c:\users\malacka\documents\github\rdbms4c\test\database\therm_event_types.c
 	"therm_event_types.h"
 	"../../src/db_implement.h"
 
-1339436785 c:\users\malacka\documents\github\rdbms4c\test\database\therm_event_types.h
+1339824402 c:\users\malacka\documents\github\rdbms4c\test\database\therm_event_types.h
 	"../../src/db.h"
-	"../../src/db_string.h"
 
-1339436801 source:c:\users\malacka\documents\github\rdbms4c\test\database\therm_events.c
+1339706597 source:c:\users\malacka\documents\github\rdbms4c\test\database\therm_events.c
 	"therm_events.h"
 	"../../src/db_implement.h"
 
-1339436748 c:\users\malacka\documents\github\rdbms4c\test\database\therm_events.h
+1339824409 c:\users\malacka\documents\github\rdbms4c\test\database\therm_events.h
 	"../../src/db.h"
 
-1339614676 source:c:\users\malacka\documents\github\rdbms4c\src\db_timer.c
+1339827325 source:c:\users\malacka\documents\github\rdbms4c\src\db_timer.c
 	"db_timer.h"
 	<stdlib.h>
 	<time.h>
 
-1339613516 c:\users\malacka\documents\github\rdbms4c\src\db_timer.h
+1339827247 c:\users\malacka\documents\github\rdbms4c\src\db_timer.h
 

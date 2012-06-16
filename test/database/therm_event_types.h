@@ -20,7 +20,6 @@
 #define THERM_EVENT_TYPES_H_INCLUDED
 
 #include "../../src/db.h"
-#include "../../src/db_string.h"
 
 #define THERM_EVENT_TYPES_id 0
 #define THERM_EVENT_TYPES_name 1

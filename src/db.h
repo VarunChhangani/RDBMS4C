@@ -27,6 +27,9 @@
 #include "db_table.h"
 #include "db_cursor.h"
 
+#include "db_string.h"
+#include "db_timer.h"
+
 #define __db_record_definition __db_record_s_definition*
 #define __db_record __db_record_s_record*
 #define __db_field __db_field_s_field*

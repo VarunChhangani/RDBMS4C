@@ -78,7 +78,7 @@ void timer_action(__stimer* search_timer)
 {
     if((search_timer->last+search_timer->fire)<clock())
     {
-        (*search_timer->pf)();
+        (*search_timer->pf)(search_timer->id);
         search_timer->last=clock();
     }
 }

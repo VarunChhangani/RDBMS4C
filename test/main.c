@@ -17,7 +17,6 @@
 */
 
 #include "../src/db.h"
-#include "../src/db_string.h"
 #include "database/therm_event_types.h"
 #include "database/therm_events.h"
 
@@ -29,8 +28,9 @@ __db_record record;
 
 unsigned long id = 2;
 
-void timer_2s(void)
+void timer_2s(int pid)
 {
+    printf("Timer: %i\n", pid);
     printf("Creating event...\n");
     therm_event.id = ++id;
     therm_event.event_type_fk = therm_event_type_find(1);
@@ -38,8 +38,9 @@ void timer_2s(void)
     printf("Done.\n");
 }
 
-void timer_10s(void)
+void timer_10s(int pid)
 {
+    printf("Timer: %i\n", pid);
     printf("Reporting events...\n");
 
     cursor = therm_events_new_cursor();
@@ -58,8 +59,9 @@ void timer_10s(void)
     printf("Done.\n\n");
 }
 
-void timer_10m(void)
+void timer_10m(int pid)
 {
+    printf("Timer: %i\n", pid);
     printf("Timer 10 m\n");
     timer_pool_exit();
 }
@@ -120,9 +122,11 @@ int main(int argc, char *argv[])
     therm_event_type.id = 1;
     therm_event_type.name = db_string_create("WIND_UP");
     therm_event_type_insert(&therm_event_type);
+
     therm_event_type.id = 2;
     therm_event_type.name = db_string_create("WIND_DOWN");
     therm_event_type_insert(&therm_event_type);
+
     printf("Done.\n\n");
 
     printf("Reporting event types...\n");
@@ -141,8 +145,8 @@ int main(int argc, char *argv[])
     printf("Starting timer pool...\n");
 
     timer = create_timer(1, 2000, timer_2s);
-    timer2 = create_timer(1, 10000, timer_10s);
-    timer10m = create_timer(1, 1000*60*60, timer_10m);
+    timer2 = create_timer(2, 10000, timer_10s);
+    timer10m = create_timer(3, 1000*60*60, timer_10m);
 
     timer_pool();
 

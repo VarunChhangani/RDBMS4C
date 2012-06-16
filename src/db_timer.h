@@ -19,7 +19,7 @@
 #ifndef __TIMER__
 #define __TIMER__
 
-typedef void __timer_function();
+typedef void __timer_function(int pid);
 
 typedef __timer_function *__p_timer_function;
 
@@ -28,5 +28,7 @@ int create_timer(int pid, int p_seconds, __p_timer_function p_pf);
 void drop_timer(int pid);
 
 void timer_pool();
+
+void timer_pool_exit();
 
 #endif
