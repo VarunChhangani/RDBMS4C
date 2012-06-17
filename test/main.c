@@ -31,7 +31,7 @@ void timer_2s(int pid)
     int i;
     printf("Timer: %i\n", pid);
     printf("Creating event... num of rec: %i\n", therm_events_count());
-    for(i=0; i<100000; i++)
+    for(i=0; i<100; i++)
     {
         therm_event.event_type_fk = therm_event_type_find(1);
         therm_event_insert(&therm_event);

@@ -134,7 +134,7 @@
 1338186843 c:\users\malacka\documents\github\rdbms4c\src\db_cursor.h
 	"db.h"
 
-1339868204 source:c:\users\malacka\documents\github\rdbms4c\src\db_cursor.c
+1339912350 source:c:\users\malacka\documents\github\rdbms4c\src\db_cursor.c
 	<stdlib.h>
 	"db_cursor.h"
 
@@ -163,7 +163,7 @@
 
 1338186843 c:\users\malacka\documents\github\rdbms4c\src\str.h
 
-1339874718 source:c:\users\malacka\documents\github\rdbms4c\src\db_table.c
+1339912105 source:c:\users\malacka\documents\github\rdbms4c\src\db_table.c
 	<stdlib.h>
 	"db_table.h"
 

@@ -5,7 +5,7 @@
 		<Cursor position="2299" topLine="33" />
 	</File>
 	<File name="src\db_cursor.c" open="0" top="0" tabpos="4">
-		<Cursor position="7196" topLine="210" />
+		<Cursor position="9724" topLine="258" />
 	</File>
 	<File name="src\db_cursor.h" open="0" top="0" tabpos="3">
 		<Cursor position="1668" topLine="28" />
@@ -47,7 +47,7 @@
 		<Cursor position="1004" topLine="12" />
 	</File>
 	<File name="src\db_table.c" open="0" top="0" tabpos="3">
-		<Cursor position="17645" topLine="472" />
+		<Cursor position="15074" topLine="401" />
 	</File>
 	<File name="src\db_table.h" open="0" top="0" tabpos="0">
 		<Cursor position="3345" topLine="46" />
@@ -80,6 +80,6 @@
 		<Cursor position="1328" topLine="5" />
 	</File>
 	<File name="test\main.c" open="1" top="1" tabpos="0">
-		<Cursor position="3915" topLine="122" />
+		<Cursor position="948" topLine="3" />
 	</File>
 </CodeBlocks_layout_file>
