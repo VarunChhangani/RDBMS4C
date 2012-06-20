@@ -1,6 +1,7 @@
 /*
     blogcprog.com - DB_ERROR
     Copyright (C) 2010  blogcprog.com
+                  2012  rdbms4c.org
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -35,7 +36,8 @@ typedef enum {__WITHOUT_ERROR = 0,
               __EMPTY_MANDATORY_FIELD = 810,
               __CANNOT_MODIFY_UNIQUE_KEY = 820,
               __CANNOT_MODIFY_FOREIGN_KEY = 830,
-              __FOREIGN_KEY_NEEDED = 840,
+              __WRONG_PARENT_TABLE = 840,
+              __FOREIGN_KEY_NEEDED = 850,
               __NO_DATA_FOUND = 900
              } __db_error_type;
 

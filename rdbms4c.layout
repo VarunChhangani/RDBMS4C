@@ -1,85 +1,94 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Release" />
-	<File name="src\db.h" open="0" top="0" tabpos="2">
-		<Cursor position="2299" topLine="33" />
+	<File name="src\db.c" open="0" top="0" tabpos="0">
+		<Cursor position="102" topLine="0" />
 	</File>
-	<File name="src\db_cursor.c" open="0" top="0" tabpos="4">
-		<Cursor position="9724" topLine="258" />
+	<File name="src\db.h" open="0" top="0" tabpos="2">
+		<Cursor position="104" topLine="0" />
+	</File>
+	<File name="src\db_cursor.c" open="0" top="0" tabpos="3">
+		<Cursor position="11583" topLine="312" />
 	</File>
 	<File name="src\db_cursor.h" open="0" top="0" tabpos="3">
-		<Cursor position="1668" topLine="28" />
+		<Cursor position="111" topLine="0" />
 	</File>
 	<File name="src\db_error.c" open="0" top="0" tabpos="2">
-		<Cursor position="859" topLine="0" />
+		<Cursor position="108" topLine="0" />
 	</File>
 	<File name="src\db_error.h" open="0" top="0" tabpos="4">
-		<Cursor position="1345" topLine="15" />
+		<Cursor position="945" topLine="12" />
 	</File>
 	<File name="src\db_field.c" open="0" top="0" tabpos="5">
-		<Cursor position="3314" topLine="57" />
+		<Cursor position="108" topLine="0" />
 	</File>
 	<File name="src\db_field.h" open="0" top="0" tabpos="2">
-		<Cursor position="2034" topLine="44" />
+		<Cursor position="1600" topLine="18" />
+	</File>
+	<File name="src\db_general.c" open="0" top="0" tabpos="0">
+		<Cursor position="110" topLine="0" />
 	</File>
 	<File name="src\db_general.h" open="0" top="0" tabpos="3">
-		<Cursor position="580" topLine="0" />
+		<Cursor position="112" topLine="0" />
 	</File>
 	<File name="src\db_implement.h" open="0" top="0" tabpos="0">
-		<Cursor position="878" topLine="0" />
+		<Cursor position="95" topLine="0" />
 	</File>
 	<File name="src\db_index.c" open="0" top="0" tabpos="0">
-		<Cursor position="1060" topLine="15" />
+		<Cursor position="110" topLine="0" />
 	</File>
 	<File name="src\db_index.h" open="0" top="0" tabpos="3">
-		<Cursor position="1668" topLine="20" />
+		<Cursor position="108" topLine="0" />
 	</File>
 	<File name="src\db_record.c" open="0" top="0" tabpos="2">
-		<Cursor position="791" topLine="1" />
+		<Cursor position="92" topLine="1" />
 	</File>
 	<File name="src\db_record.h" open="0" top="0" tabpos="4">
-		<Cursor position="817" topLine="0" />
+		<Cursor position="978" topLine="3" />
 	</File>
 	<File name="src\db_string.c" open="0" top="0" tabpos="6">
-		<Cursor position="1337" topLine="27" />
+		<Cursor position="109" topLine="0" />
 	</File>
 	<File name="src\db_string.h" open="0" top="0" tabpos="0">
-		<Cursor position="1004" topLine="12" />
+		<Cursor position="109" topLine="0" />
 	</File>
 	<File name="src\db_table.c" open="0" top="0" tabpos="3">
-		<Cursor position="15074" topLine="401" />
+		<Cursor position="9233" topLine="159" />
 	</File>
 	<File name="src\db_table.h" open="0" top="0" tabpos="0">
-		<Cursor position="3345" topLine="46" />
+		<Cursor position="1144" topLine="12" />
 	</File>
 	<File name="src\db_timer.c" open="0" top="0" tabpos="3">
-		<Cursor position="2223" topLine="57" />
+		<Cursor position="110" topLine="0" />
 	</File>
 	<File name="src\db_timer.h" open="0" top="0" tabpos="2">
-		<Cursor position="964" topLine="0" />
+		<Cursor position="110" topLine="0" />
 	</File>
 	<File name="src\str.c" open="0" top="0" tabpos="7">
-		<Cursor position="2595" topLine="83" />
+		<Cursor position="407" topLine="0" />
 	</File>
 	<File name="src\str.h" open="0" top="0" tabpos="5">
-		<Cursor position="787" topLine="0" />
+		<Cursor position="99" topLine="0" />
 	</File>
 	<File name="src\txt.c" open="0" top="0" tabpos="0">
-		<Cursor position="740" topLine="86" />
+		<Cursor position="105" topLine="0" />
+	</File>
+	<File name="src\txt.h" open="0" top="0" tabpos="0">
+		<Cursor position="105" topLine="0" />
 	</File>
 	<File name="test\database\therm_event_types.c" open="0" top="0" tabpos="2">
-		<Cursor position="2004" topLine="12" />
+		<Cursor position="117" topLine="0" />
 	</File>
 	<File name="test\database\therm_event_types.h" open="0" top="0" tabpos="2">
-		<Cursor position="1456" topLine="7" />
+		<Cursor position="117" topLine="0" />
 	</File>
-	<File name="test\database\therm_events.c" open="0" top="0" tabpos="4">
-		<Cursor position="1532" topLine="13" />
+	<File name="test\database\therm_events.c" open="0" top="0" tabpos="2">
+		<Cursor position="1783" topLine="32" />
 	</File>
 	<File name="test\database\therm_events.h" open="0" top="0" tabpos="0">
-		<Cursor position="1328" topLine="5" />
+		<Cursor position="95" topLine="0" />
 	</File>
-	<File name="test\main.c" open="1" top="1" tabpos="0">
-		<Cursor position="948" topLine="3" />
+	<File name="test\main.c" open="0" top="0" tabpos="1">
+		<Cursor position="648" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>

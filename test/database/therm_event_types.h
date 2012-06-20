@@ -1,6 +1,7 @@
 /*
     blogcprog.com - therm_event_types
     Copyright (C) 2012  blogcprog.com
+                  2012  rdbms4c.org
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

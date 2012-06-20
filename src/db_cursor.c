@@ -1,6 +1,7 @@
 /*
     blogcprog.com - db_cursor
     Copyright (C) 2010  blogcprog.com
+                  2012  rdbms4c.org
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -237,7 +238,9 @@ void db_cursor_update(__db_cursor_s_cursor* p_cursor,
                       void* p_value)
 {
     __db_record_s_record* v_record;
+
     db_error_reset();
+
     if(!db_table_is_unique_field(p_cursor->table,
                                  p_field_position))
     {
@@ -291,6 +294,52 @@ void db_cursor_update_fk(__db_cursor_s_cursor* p_cursor,
     }
     else
         db_error_set_error(__CANNOT_MODIFY_UNIQUE_KEY);
+
+}
+
+void db_cursor_update_field(__db_cursor_s_cursor* p_cursor,
+                            __db_field_s_field* p_fields,
+                            __db_field_position p_field_position,
+                            void* p_value)
+{
+    db_error_reset();
+
+    if(!db_table_is_fk_field(p_cursor->table,
+                             p_field_position))
+    {
+        db_field_set_value(p_cursor->table->record_definition->fields_definition,
+                           p_fields,
+                           p_field_position,
+                           p_value);
+
+    }
+    else
+        db_error_set_error(__CANNOT_MODIFY_FOREIGN_KEY);
+
+}
+
+void db_cursor_update_field_fk(__db_cursor_s_cursor* p_cursor,
+                               __db_field_s_field* p_fields,
+                               __db_field_position p_field_position,
+                               __db_cursor_s_cursor* p_foreign_cursor)
+{
+    db_error_reset();
+
+    if(db_table_is_fk_field(p_cursor->table,
+                            p_field_position))
+    {
+        if(p_cursor->table->record_definition->fields_definition[p_field_position].foreign_key_target == p_foreign_cursor->table)
+        {
+            db_field_set_value(p_cursor->table->record_definition->fields_definition,
+                               p_fields,
+                               p_field_position,
+                               db_cursor_current(p_foreign_cursor));
+        }
+        else
+            db_error_set_error(__WRONG_PARENT_TABLE);
+    }
+    else
+        db_error_set_error(__FOREIGN_KEY_NEEDED);
 
 }
 

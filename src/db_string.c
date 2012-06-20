@@ -1,6 +1,7 @@
 /*
     blogcprog.com - db_string
     Copyright (C) 2011  blogcprog.com
+                  2012  rdbms4c.org
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
