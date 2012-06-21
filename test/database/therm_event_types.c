@@ -44,20 +44,19 @@ void therm_event_types_desctructor()
 void therm_event_type_insert(__therm_event_type_s* therm_event_type)
 {
     __db_field db_field = db_insert_preparation(2);
-    db_insert_set_field(record_definition, db_field, THERM_EVENT_TYPES_id, &therm_event_type->id);
-    db_insert_set_field(record_definition, db_field, THERM_EVENT_TYPES_name, therm_event_type->name->str);
+    db_insert_set_field(cursor, db_field, THERM_EVENT_TYPES_id, &therm_event_type->id);
+    db_insert_set_field(cursor, db_field, THERM_EVENT_TYPES_name, therm_event_type->name->str);
     db_insert_into(cursor, db_field);
     therm_event_type_clear(therm_event_type);
 }
 
-__db_record therm_event_type_find(unsigned char id)
+__db_cursor therm_event_type_find(unsigned char id)
 {
-    __db_record rec;
     __db_key key = db_create_key(cursor);
     db_set_key_field(key, THERM_EVENT_TYPES_id, &id);
-    rec = db_find_by_key(key);
+    db_find_by_key(key);
     db_drop_key(key);
-    return rec;
+    return cursor;
 }
 
 void therm_event_type_clear(__therm_event_type_s* therm_event_type)

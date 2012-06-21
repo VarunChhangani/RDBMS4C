@@ -27,7 +27,7 @@
 
 typedef struct __therm_event_ss {
     unsigned long id;
-    __db_record event_type_fk;
+    __db_cursor event_type_fk;
 
 } __therm_event_s;
 
@@ -37,7 +37,7 @@ void therm_event_desctructor();
 
 void therm_event_insert(__therm_event_s* therm_event);
 
-__db_record therm_event_find(unsigned char id);
+__db_cursor therm_event_find(unsigned char id);
 
 void therm_event_clear(__therm_event_s* therm_event);
 

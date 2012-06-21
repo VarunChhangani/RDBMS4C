@@ -29,5 +29,6 @@ void db_error_set_error(__db_error_type p_error_type)
 {
     gv_db_error.error_status = __ERROR;
     gv_db_error.error_type = p_error_type;
+    printf("Error: %i\n",  gv_db_error.error_type);
 }
 

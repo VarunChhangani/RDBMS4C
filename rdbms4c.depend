@@ -93,10 +93,10 @@
 	"../src/db.h"
 	"../src/db_string.h"
 
-1340216162 source:c:\users\malacka\documents\github\rdbms4c\src\db.c
+1340219952 source:c:\users\malacka\documents\github\rdbms4c\src\db.c
 	"db.h"
 
-1340216003 c:\users\malacka\documents\github\rdbms4c\src\db.h
+1340303552 c:\users\malacka\documents\github\rdbms4c\src\db.h
 	"db_general.h"
 	"db_error.h"
 	"db_field.h"
@@ -107,67 +107,67 @@
 	"db_string.h"
 	"db_timer.h"
 
-1340215947 c:\users\malacka\documents\github\rdbms4c\src\db_general.h
+1340219952 c:\users\malacka\documents\github\rdbms4c\src\db_general.h
 
-1340219796 c:\users\malacka\documents\github\rdbms4c\src\db_error.h
+1340219952 c:\users\malacka\documents\github\rdbms4c\src\db_error.h
 
-1340215956 c:\users\malacka\documents\github\rdbms4c\src\db_field.h
+1340219952 c:\users\malacka\documents\github\rdbms4c\src\db_field.h
 	<stdlib.h>
 	"db_general.h"
 	"db_error.h"
 
-1340215926 c:\users\malacka\documents\github\rdbms4c\src\db_index.h
+1340219952 c:\users\malacka\documents\github\rdbms4c\src\db_index.h
 	<stdlib.h>
 	"db_record.h"
 
-1340215912 c:\users\malacka\documents\github\rdbms4c\src\db_record.h
+1340219952 c:\users\malacka\documents\github\rdbms4c\src\db_record.h
 	"db_general.h"
 	"db_field.h"
 
-1340215899 c:\users\malacka\documents\github\rdbms4c\src\db_table.h
+1340219952 c:\users\malacka\documents\github\rdbms4c\src\db_table.h
 	"db_general.h"
 	"db_error.h"
 	"db_field.h"
 	"db_index.h"
 	"db_record.h"
 
-1340215992 c:\users\malacka\documents\github\rdbms4c\src\db_cursor.h
+1340301304 c:\users\malacka\documents\github\rdbms4c\src\db_cursor.h
 	"db.h"
 
-1340219734 source:c:\users\malacka\documents\github\rdbms4c\src\db_cursor.c
+1340219952 source:c:\users\malacka\documents\github\rdbms4c\src\db_cursor.c
 	<stdlib.h>
 	"db_cursor.h"
 
-1340216153 source:c:\users\malacka\documents\github\rdbms4c\src\db_error.c
+1340304320 source:c:\users\malacka\documents\github\rdbms4c\src\db_error.c
 	"db_error.h"
 
-1340216148 source:c:\users\malacka\documents\github\rdbms4c\src\db_field.c
+1340219952 source:c:\users\malacka\documents\github\rdbms4c\src\db_field.c
 	"db_field.h"
 
-1340216139 source:c:\users\malacka\documents\github\rdbms4c\src\db_general.c
+1340219952 source:c:\users\malacka\documents\github\rdbms4c\src\db_general.c
 
-1340216127 source:c:\users\malacka\documents\github\rdbms4c\src\db_index.c
+1340219952 source:c:\users\malacka\documents\github\rdbms4c\src\db_index.c
 	"db_index.h"
 
-1340216119 source:c:\users\malacka\documents\github\rdbms4c\src\db_record.c
+1340219952 source:c:\users\malacka\documents\github\rdbms4c\src\db_record.c
 	"stdlib.h"
 	"db_record.h"
 
-1340216109 source:c:\users\malacka\documents\github\rdbms4c\src\db_string.c
+1340219952 source:c:\users\malacka\documents\github\rdbms4c\src\db_string.c
 	<stdio.h>
 	<stdlib.h>
 	"db_string.h"
 	"str.h"
 
-1340215907 c:\users\malacka\documents\github\rdbms4c\src\db_string.h
+1340219952 c:\users\malacka\documents\github\rdbms4c\src\db_string.h
 
-1340215884 c:\users\malacka\documents\github\rdbms4c\src\str.h
+1340219952 c:\users\malacka\documents\github\rdbms4c\src\str.h
 
-1340216101 source:c:\users\malacka\documents\github\rdbms4c\src\db_table.c
+1340219952 source:c:\users\malacka\documents\github\rdbms4c\src\db_table.c
 	<stdlib.h>
 	"db_table.h"
 
-1340216080 source:c:\users\malacka\documents\github\rdbms4c\src\str.c
+1340219952 source:c:\users\malacka\documents\github\rdbms4c\src\str.c
 	<stdio.h>
 	"str.h"
 
@@ -178,14 +178,14 @@
 
 1338186843 c:\users\malacka\documents\github\rdbms4c\src\timer.h
 
-1340216065 source:c:\users\malacka\documents\github\rdbms4c\src\txt.c
+1340219952 source:c:\users\malacka\documents\github\rdbms4c\src\txt.c
 	"txt.h"
 
-1340215868 c:\users\malacka\documents\github\rdbms4c\src\txt.h
+1340219952 c:\users\malacka\documents\github\rdbms4c\src\txt.h
 	<stdio.h>
 	"db.h"
 
-1340215815 source:c:\users\malacka\documents\github\rdbms4c\test\main.c
+1340303679 source:c:\users\malacka\documents\github\rdbms4c\test\main.c
 	"../src/db.h"
 	"database/therm_event_types.h"
 	"database/therm_events.h"
@@ -198,7 +198,7 @@
 	"../src/db.h"
 	"../src/db_string.h"
 
-1340215939 c:\users\malacka\documents\github\rdbms4c\src\db_implement.h
+1340219952 c:\users\malacka\documents\github\rdbms4c\src\db_implement.h
 
 1339356553 source:c:\users\malacka\documents\github\rdbms4c\test\therm_events.c
 	"therm_events.h"
@@ -207,25 +207,25 @@
 1339181477 c:\users\malacka\documents\github\rdbms4c\test\therm_events.h
 	"../src/db.h"
 
-1340216051 source:c:\users\malacka\documents\github\rdbms4c\test\database\therm_event_types.c
+1340303628 source:c:\users\malacka\documents\github\rdbms4c\test\database\therm_event_types.c
 	"therm_event_types.h"
 	"../../src/db_implement.h"
 
-1340215857 c:\users\malacka\documents\github\rdbms4c\test\database\therm_event_types.h
+1340302100 c:\users\malacka\documents\github\rdbms4c\test\database\therm_event_types.h
 	"../../src/db.h"
 
-1340216039 source:c:\users\malacka\documents\github\rdbms4c\test\database\therm_events.c
+1340304357 source:c:\users\malacka\documents\github\rdbms4c\test\database\therm_events.c
 	"therm_events.h"
 	"../../src/db_implement.h"
 	"therm_event_types.h"
 
-1340215844 c:\users\malacka\documents\github\rdbms4c\test\database\therm_events.h
+1340302303 c:\users\malacka\documents\github\rdbms4c\test\database\therm_events.h
 	"../../src/db.h"
 
-1340216092 source:c:\users\malacka\documents\github\rdbms4c\src\db_timer.c
+1340219952 source:c:\users\malacka\documents\github\rdbms4c\src\db_timer.c
 	"db_timer.h"
 	<stdlib.h>
 	<time.h>
 
-1340215890 c:\users\malacka\documents\github\rdbms4c\src\db_timer.h
+1340219952 c:\users\malacka\documents\github\rdbms4c\src\db_timer.h
 

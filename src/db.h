@@ -65,8 +65,13 @@
 #define db_find_by_key(p_key) db_cursor_find_by_key(p_key)
 
 #define db_insert_preparation(p_num_of_fld) db_field_create(p_num_of_fld)
-#define db_insert_set_field(p_rec_def, p_fld, p_idx, p_val) \
-            db_field_set_value(p_rec_def->fields_definition, p_fld, p_idx, p_val)
+
+#define db_insert_set_field(p_cur, p_fld, p_idx, p_val) \
+            db_cursor_update_field(p_cur, p_fld, p_idx, p_val)
+
+#define db_insert_set_field_fk(p_cur, p_fld, p_idx, p_cur_par) \
+            db_cursor_update_field_fk(p_cur, p_fld, p_idx, p_cur_par)
+
 #define db_insert_into(p_cur, p_fld) db_cursor_insert(p_cur, p_fld)
 
 #define db_update(p_cur, p_fld_pos, p_val) db_cursor_update(p_cur, p_fld_pos, p_val)

@@ -71,6 +71,16 @@ void db_cursor_set_key_fields(__db_cursor_s_key* p_key,
 
 __db_record_s_record* db_cursor_find_by_key(__db_cursor_s_key* p_key);
 
+void db_cursor_update_field(__db_cursor_s_cursor* p_cursor,
+                            __db_field_s_field* p_fields,
+                            __db_field_position p_field_position,
+                            void* p_value);
+
+void db_cursor_update_field_fk(__db_cursor_s_cursor* p_cursor,
+                               __db_field_s_field* p_fields,
+                               __db_field_position p_field_position,
+                               __db_cursor_s_cursor* p_foreign_cursor);
+
 void db_cursor_insert(__db_cursor_s_cursor* p_cursor,
                       __db_field_s_field* p_fields);
 

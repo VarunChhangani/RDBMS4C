@@ -36,7 +36,7 @@ void therm_event_types_desctructor();
 
 void therm_event_type_insert(__therm_event_type_s* therm_event_type);
 
-__db_record therm_event_type_find(unsigned char id);
+__db_cursor therm_event_type_find(unsigned char id);
 
 void therm_event_type_clear(__therm_event_type_s* therm_event_type);
 
