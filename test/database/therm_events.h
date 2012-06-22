@@ -25,6 +25,8 @@
 #define THERM_EVENTS_id 0
 #define THERM_EVENTS_event_type_fk 1
 
+#define THERM_EVENTS_event_type_fk_idx 1
+
 typedef struct __therm_event_ss {
     unsigned long id;
     __db_cursor event_type_fk;
@@ -44,6 +46,8 @@ void therm_event_clear(__therm_event_s* therm_event);
 __db_cursor therm_events_new_cursor();
 
 long therm_events_count();
+
+__db_table get_therm_events_table();
 
 
 #endif

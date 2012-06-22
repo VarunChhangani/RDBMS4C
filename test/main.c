@@ -16,6 +16,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+#include <math.h>
 
 #include "../src/db.h"
 #include "database/therm_event_types.h"
@@ -30,21 +31,27 @@ __db_record record;
 void timer_2s(int pid)
 {
     int i;
-    printf("Timer: %i\n", pid);
+    int event_type_id;
+    printf("\nTimer: %i\n", pid);
     printf("Creating event... num of rec: %i\n", therm_events_count());
-    for(i=0; i<100; i++)
+    for(i=0; i<10000; i++)
     {
-        therm_event.event_type_fk = therm_event_type_find(2);
+        event_type_id = i%3 == 0 ? 1 : 2;
+        therm_event.event_type_fk = therm_event_type_find(event_type_id);
         therm_event_insert(&therm_event);
     }
 
+    printf("Find event... ");
+    cursor = therm_event_find( llround (therm_events_count()/2 ));
+    printf("Find event2... ");
+    cursor = therm_event_find( llround (therm_events_count()/2 ));
     printf("Done.\n");
 }
 
-void timer_10s(int pid)
+void timer_60s(int pid)
 {
     printf("Timer: %i\n", pid);
-    printf("Reporting events...\n");
+    printf("Reporting events in insert order...\n");
 
     cursor = therm_events_new_cursor();
     __for_cursor_loop(record, cursor)
@@ -59,6 +66,29 @@ void timer_10s(int pid)
     __end_loop(record, cursor)
 
     db_drop_cursor(cursor);
+
+
+    printf("\nReporting events in event_type order...\n");
+
+    cursor = db_create_cursor(get_therm_events_table(), THERM_EVENTS_event_type_fk_idx);
+    __for_cursor_loop(record, cursor)
+    printf("Evnt type: %i - %s, Event: %i \n",
+           db_get_field_as_unsigned_char(
+               db_get_field_as_foreign_key_record(
+                   record, THERM_EVENTS_event_type_fk
+               ),
+               THERM_EVENT_TYPES_id),
+           db_get_field_as_char_array(
+               db_get_field_as_foreign_key_record(
+                   record, THERM_EVENTS_event_type_fk
+               ),
+               THERM_EVENT_TYPES_name),
+           db_get_field_as_unsigned_long(record, THERM_EVENTS_id)
+          );
+    __end_loop(record, cursor)
+
+    db_drop_cursor(cursor);
+
     printf("Done.\n\n");
 }
 
@@ -148,7 +178,7 @@ int main(int argc, char *argv[])
     printf("Starting timer pool...\n");
 
     timer = create_timer(1, 2000, timer_2s);
-    timer2 = create_timer(2, 10000, timer_10s);
+    timer2 = create_timer(2, 60000, timer_60s);
     timer10m = create_timer(3, 1000*60*60, timer_10m);
 
     timer_pool();
