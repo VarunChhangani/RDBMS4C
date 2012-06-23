@@ -1,5 +1,5 @@
 /*
-    blogcprog.com - db_record
+    rdbms4c.org - db_record
     Copyright (C) 2010  blogcprog.com
                   2012  rdbms4c.org
 

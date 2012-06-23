@@ -1,5 +1,5 @@
 /*
-    blogcprog.com - therm_events
+    rdbms4c.org - therm_events
     Copyright (C) 2012  blogcprog.com
                   2012  rdbms4c.org
 
@@ -51,15 +51,17 @@ void therm_events_desctructor()
     db_drop_table(table);
 }
 
-void therm_event_insert(__therm_event_s* therm_event)
+__db_record therm_event_insert(__therm_event_s* therm_event)
 {
+    __db_record record;
     __db_field db_field = db_insert_preparation(record_definition->num_of_fields);
     therm_event->id = 0;
     db_insert_set_field(cursor, db_field, THERM_EVENTS_id, &therm_event->id);
     db_insert_set_field_fk(cursor, db_field, THERM_EVENTS_event_type_fk, therm_event->event_type_fk);
 
-    db_insert_into(cursor, db_field);
+    record = db_insert_into(cursor, db_field);
     therm_event_clear(therm_event);
+    return record;
 }
 
 __db_cursor therm_event_find(unsigned char id)
@@ -82,10 +84,12 @@ __db_cursor therm_events_new_cursor()
     return db_create_cursor(table, PRIMARY_KEY);
 }
 
-long therm_events_count(){
+long therm_events_count()
+{
     return table->count;
 }
 
-__db_table get_therm_events_table(){
+__db_table get_therm_events_table()
+{
     return table;
 }

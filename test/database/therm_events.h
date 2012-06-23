@@ -1,5 +1,5 @@
 /*
-    blogcprog.com - therm_events
+    rdbms4c.org - therm_events
     Copyright (C) 2012  blogcprog.com
                   2012  rdbms4c.org
 
@@ -27,6 +27,9 @@
 
 #define THERM_EVENTS_event_type_fk_idx 1
 
+#define get_THERM_EVENTS_id(p_record) db_get_field_as_unsigned_long(p_record, THERM_EVENTS_id)
+#define get_THERM_EVENTS_event_type_fk(p_record) db_get_field_as_foreign_key_record(p_record, THERM_EVENTS_event_type_fk)
+
 typedef struct __therm_event_ss {
     unsigned long id;
     __db_cursor event_type_fk;
@@ -37,7 +40,7 @@ typedef struct __therm_event_ss {
 void therm_event_constructor();
 void therm_event_desctructor();
 
-void therm_event_insert(__therm_event_s* therm_event);
+__db_record therm_event_insert(__therm_event_s* therm_event);
 
 __db_cursor therm_event_find(unsigned char id);
 

@@ -1,5 +1,5 @@
 /*
-    blogcprog.com - Texts
+    rdbms4c.org - Texts
     Copyright (C) 2010  blogcprog.com
                   2012  rdbms4c.org
 

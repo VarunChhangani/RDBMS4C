@@ -55,13 +55,10 @@ void timer_60s(int pid)
 
     cursor = therm_events_new_cursor();
     __for_cursor_loop(record, cursor)
-    printf("Evnts: %i - %s \n",
-           db_get_field_as_unsigned_long(record, THERM_EVENTS_id),
-           db_get_field_as_char_array(
-               db_get_field_as_foreign_key_record(
-                   record, THERM_EVENTS_event_type_fk
-               ),
-               THERM_EVENT_TYPES_name)
+        printf("Evnts: %i - %s \n",
+           get_THERM_EVENTS_id(record),
+           get_THERM_EVENT_TYPES_name(
+               get_THERM_EVENTS_event_type_fk(record))
           );
     __end_loop(record, cursor)
 
@@ -72,18 +69,12 @@ void timer_60s(int pid)
 
     cursor = db_create_cursor(get_therm_events_table(), THERM_EVENTS_event_type_fk_idx);
     __for_cursor_loop(record, cursor)
-    printf("Evnt type: %i - %s, Event: %i \n",
-           db_get_field_as_unsigned_char(
-               db_get_field_as_foreign_key_record(
-                   record, THERM_EVENTS_event_type_fk
-               ),
-               THERM_EVENT_TYPES_id),
-           db_get_field_as_char_array(
-               db_get_field_as_foreign_key_record(
-                   record, THERM_EVENTS_event_type_fk
-               ),
-               THERM_EVENT_TYPES_name),
-           db_get_field_as_unsigned_long(record, THERM_EVENTS_id)
+        printf("Evnt type: %i - %s, Event: %i \n",
+           get_THERM_EVENT_TYPES_id(
+               get_THERM_EVENTS_event_type_fk(record)),
+           get_THERM_EVENT_TYPES_name(
+               get_THERM_EVENTS_event_type_fk(record)),
+           get_THERM_EVENTS_id(record)
           );
     __end_loop(record, cursor)
 
@@ -166,9 +157,9 @@ int main(int argc, char *argv[])
 
     cursor = therm_event_types_new_cursor();
     __for_cursor_loop(record, cursor)
-    printf("Evnt type: %i -  %s\n",
-           db_get_field_as_unsigned_char(record, THERM_EVENT_TYPES_id),
-           db_get_field_as_char_array(record, THERM_EVENT_TYPES_name)
+        printf("Evnt type: %i -  %s\n",
+           get_THERM_EVENT_TYPES_id(record),
+           get_THERM_EVENT_TYPES_name(record)
           );
     __end_loop(record, cursor)
 

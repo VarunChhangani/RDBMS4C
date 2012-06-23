@@ -1,5 +1,5 @@
 /*
-    blogcprog.com - db_implement
+    rdbms4c.org - db_implement
     Copyright (C) 2012  blogcprog.com
                   2012  rdbms4c.org
 

@@ -1,5 +1,5 @@
 /*
-    blogcprog.com - therm_event_types
+    rdbms4c.org - therm_event_types
     Copyright (C) 2012  blogcprog.com
                   2012  rdbms4c.org
 
@@ -25,6 +25,9 @@
 #define THERM_EVENT_TYPES_id 0
 #define THERM_EVENT_TYPES_name 1
 
+#define get_THERM_EVENT_TYPES_id(p_record) db_get_field_as_unsigned_char(p_record, THERM_EVENT_TYPES_id)
+#define get_THERM_EVENT_TYPES_name(p_record) db_get_field_as_char_array(p_record, THERM_EVENT_TYPES_name)
+
 typedef struct __therm_event_type_ss {
     unsigned char id;
     __db_string name;
@@ -34,7 +37,7 @@ typedef struct __therm_event_type_ss {
 void therm_event_types_constructor();
 void therm_event_types_desctructor();
 
-void therm_event_type_insert(__therm_event_type_s* therm_event_type);
+__db_record therm_event_type_insert(__therm_event_type_s* therm_event_type);
 
 __db_cursor therm_event_type_find(unsigned char id);
 

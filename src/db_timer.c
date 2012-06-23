@@ -1,5 +1,5 @@
 /*
-    blogcprog.com - db_timer.c
+    rdbms4c.org - db_timer.c
     Copyright (C) 2010  blogcprog.com
                   2012  rdbms4c.org
 

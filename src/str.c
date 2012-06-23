@@ -1,5 +1,5 @@
 /*
-    blogcprog.com - C string utility
+    rdbms4c.org - C string utility
     Copyright (C) 2010  blogcprog.com
                   2012  rdbms4c.org
 

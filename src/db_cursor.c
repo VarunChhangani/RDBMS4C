@@ -1,5 +1,5 @@
 /*
-    blogcprog.com - db_cursor
+    rdbms4c.org - db_cursor
     Copyright (C) 2010  blogcprog.com
                   2012  rdbms4c.org
 
@@ -19,6 +19,9 @@
 
 #include <stdlib.h>
 #include "db_cursor.h"
+
+#define FK_TABLE_CHECK p_cursor->table->record_definition->fields_definition[p_field_position].foreign_key_target == \
+    p_foreign_cursor->table
 
 __db_cursor_s_cursor* db_cursor_create(__db_table_s_table* p_table,
                                        const __db_index_position p_index_position)
@@ -227,10 +230,10 @@ __db_record_s_record* db_cursor_find_by_key(__db_cursor_s_key* p_key)
     return v_result;
 }
 
-void db_cursor_insert(__db_cursor_s_cursor* p_cursor,
-                      __db_field_s_field* p_fields)
+__db_record_s_record* db_cursor_insert(__db_cursor_s_cursor* p_cursor,
+                                       __db_field_s_field* p_fields)
 {
-    db_table_insert_into(p_cursor->table, p_fields);
+    return db_table_insert_into(p_cursor->table, p_fields);
 }
 
 void db_cursor_update(__db_cursor_s_cursor* p_cursor,
@@ -271,6 +274,12 @@ void db_cursor_update_fk(__db_cursor_s_cursor* p_cursor,
 {
     __db_record_s_record* v_record;
     db_error_reset();
+
+    if(FK_TABLE_CHECK)
+    {
+        db_error_set_error(__WRONG_PARENT_TABLE);
+        return;
+    }
 
     if(!db_table_is_unique_field(p_cursor->table,
                                  p_field_position))
@@ -328,7 +337,7 @@ void db_cursor_update_field_fk(__db_cursor_s_cursor* p_cursor,
     if(db_table_is_fk_field(p_cursor->table,
                             p_field_position))
     {
-        if(p_cursor->table->record_definition->fields_definition[p_field_position].foreign_key_target == p_foreign_cursor->table)
+        if(FK_TABLE_CHECK)
         {
             db_field_set_value(p_cursor->table->record_definition->fields_definition,
                                p_fields,

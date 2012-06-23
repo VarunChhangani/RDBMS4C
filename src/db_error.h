@@ -1,5 +1,5 @@
 /*
-    blogcprog.com - DB_ERROR
+    rdbms4c.org - DB_ERROR
     Copyright (C) 2010  blogcprog.com
                   2012  rdbms4c.org
 
