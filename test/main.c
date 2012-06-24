@@ -1,5 +1,5 @@
 /*
-    blogcprog.com - How to use the blogcprog.com C functions
+    rdbms4c.org - How to use RDBMS4C
     Copyright (C) 2010  blogcprog.com
                   2012  rdbms4c.org
 

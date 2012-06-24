@@ -23,6 +23,8 @@
 #define FK_TABLE_CHECK p_cursor->table->record_definition->fields_definition[p_field_position].foreign_key_target == \
     p_foreign_cursor->table
 
+#define CLEAR_BUFFER p_cursor->buffer = NULL;
+
 __db_cursor_s_cursor* db_cursor_create(__db_table_s_table* p_table,
                                        const __db_index_position p_index_position)
 {
@@ -30,6 +32,7 @@ __db_cursor_s_cursor* db_cursor_create(__db_table_s_table* p_table,
     v_result->current = 0;
     v_result->index_position = p_index_position;
     v_result->table = p_table;
+    v_result->buffer = NULL;
 
     return v_result;
 }
@@ -43,6 +46,9 @@ __db_record_s_record* db_cursor_current(__db_cursor_s_cursor* p_cursor)
 {
     __db_record_s_record* v_result = NULL;
 
+    if(p_cursor->buffer != NULL)
+        return p_cursor->buffer;
+
     v_result = db_table_get_record(p_cursor->table,
                                    p_cursor->index_position,
                                    p_cursor->current);
@@ -53,6 +59,8 @@ __db_record_s_record* db_cursor_current(__db_cursor_s_cursor* p_cursor)
 __db_record_s_record* db_cursor_next(__db_cursor_s_cursor* p_cursor)
 {
     __db_record_s_record* v_result = NULL;
+
+    CLEAR_BUFFER
 
     if(p_cursor->current < p_cursor->table->count - 1)
         v_result = db_table_get_record(p_cursor->table,
@@ -66,6 +74,8 @@ __db_record_s_record* db_cursor_prev(__db_cursor_s_cursor* p_cursor)
 {
     __db_record_s_record* v_result = NULL;
 
+    CLEAR_BUFFER
+
     if(p_cursor->current >= p_cursor->table->count)
         p_cursor->current = p_cursor->table->count - 1;
 
@@ -78,6 +88,9 @@ __db_record_s_record* db_cursor_prev(__db_cursor_s_cursor* p_cursor)
 __db_record_s_record* db_cursor_first(__db_cursor_s_cursor* p_cursor)
 {
     __db_record_s_record* v_result = NULL;
+
+    CLEAR_BUFFER
+
     p_cursor->current = 0;
     if(p_cursor->table->count == 0)
         return NULL;
@@ -91,6 +104,8 @@ __db_record_s_record* db_cursor_first(__db_cursor_s_cursor* p_cursor)
 __db_record_s_record* db_cursor_last(__db_cursor_s_cursor* p_cursor)
 {
     __db_record_s_record* v_result = NULL;
+
+    CLEAR_BUFFER
 
     if(p_cursor->table->count == 0)
     {
@@ -196,6 +211,8 @@ __db_record_s_record* db_cursor_find_by_key(__db_cursor_s_key* p_key)
     __db_index_record_position v_high;
     __db_index_record_position v_middle;
 
+    p_key->cursor->buffer = NULL;
+
     v_low = 0;
     v_high = p_key->cursor->table->count - 1;
     v_record_key = __key_to_record(p_key);
@@ -233,7 +250,8 @@ __db_record_s_record* db_cursor_find_by_key(__db_cursor_s_key* p_key)
 __db_record_s_record* db_cursor_insert(__db_cursor_s_cursor* p_cursor,
                                        __db_field_s_field* p_fields)
 {
-    return db_table_insert_into(p_cursor->table, p_fields);
+    p_cursor->buffer = db_table_insert_into(p_cursor->table, p_fields);
+    return p_cursor->buffer;
 }
 
 void db_cursor_update(__db_cursor_s_cursor* p_cursor,
@@ -241,6 +259,8 @@ void db_cursor_update(__db_cursor_s_cursor* p_cursor,
                       void* p_value)
 {
     __db_record_s_record* v_record;
+
+    CLEAR_BUFFER
 
     db_error_reset();
 
@@ -273,6 +293,9 @@ void db_cursor_update_fk(__db_cursor_s_cursor* p_cursor,
                          __db_cursor_s_cursor* p_foreign_cursor)
 {
     __db_record_s_record* v_record;
+
+    CLEAR_BUFFER
+
     db_error_reset();
 
     if(FK_TABLE_CHECK)
@@ -354,6 +377,8 @@ void db_cursor_update_field_fk(__db_cursor_s_cursor* p_cursor,
 
 void db_cursor_delete(__db_cursor_s_cursor* p_cursor)
 {
+    CLEAR_BUFFER
+
     db_table_delete_from(p_cursor->table,
                          p_cursor->index_position,
                          p_cursor->current);

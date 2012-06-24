@@ -34,6 +34,7 @@ typedef struct __db_cursor_ss_cursor
     __db_table_s_table* table;
     __db_index_position index_position;
     __db_index_record_position current;
+    __db_record_s_record* buffer;
 } __db_cursor_s_cursor;
 
 typedef struct __db_cursor_ss_key
