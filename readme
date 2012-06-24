@@ -10,6 +10,7 @@ Learn more from reference guide:
 Embedded, in memory RDBMS
 C API
 NOSQL
+No persistent data on disc
 Open source (GPL)
 Foreign key support
 Primary, unique and normal indexes
