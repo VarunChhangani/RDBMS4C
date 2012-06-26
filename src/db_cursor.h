@@ -82,7 +82,7 @@ void db_cursor_update_field_fk(__db_cursor_s_cursor* p_cursor,
                                __db_field_position p_field_position,
                                __db_cursor_s_cursor* p_foreign_cursor);
 
-__db_record_s_record* db_cursor_insert(__db_cursor_s_cursor* p_cursor,
+__db_cursor_s_cursor* db_cursor_insert(__db_cursor_s_cursor* p_cursor,
                                        __db_field_s_field* p_fields);
 
 void db_cursor_update(__db_cursor_s_cursor* p_cursor,

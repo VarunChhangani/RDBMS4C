@@ -247,11 +247,11 @@ __db_record_s_record* db_cursor_find_by_key(__db_cursor_s_key* p_key)
     return v_result;
 }
 
-__db_record_s_record* db_cursor_insert(__db_cursor_s_cursor* p_cursor,
+__db_cursor_s_cursor* db_cursor_insert(__db_cursor_s_cursor* p_cursor,
                                        __db_field_s_field* p_fields)
 {
     p_cursor->buffer = db_table_insert_into(p_cursor->table, p_fields);
-    return p_cursor->buffer;
+    return p_cursor;
 }
 
 void db_cursor_update(__db_cursor_s_cursor* p_cursor,

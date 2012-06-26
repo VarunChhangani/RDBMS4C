@@ -40,7 +40,7 @@ typedef struct __therm_event_ss {
 void therm_event_constructor();
 void therm_event_desctructor();
 
-__db_record therm_event_insert(__therm_event_s* therm_event);
+__db_cursor therm_event_insert(__therm_event_s* therm_event);
 
 __db_cursor therm_event_find(unsigned char id);
 

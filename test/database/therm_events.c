@@ -51,17 +51,16 @@ void therm_events_desctructor()
     db_drop_table(table);
 }
 
-__db_record therm_event_insert(__therm_event_s* therm_event)
+__db_cursor therm_event_insert(__therm_event_s* therm_event)
 {
-    __db_record record;
     __db_field db_field = db_insert_preparation(record_definition->num_of_fields);
     therm_event->id = 0;
     db_insert_set_field(cursor, db_field, THERM_EVENTS_id, &therm_event->id);
     db_insert_set_field_fk(cursor, db_field, THERM_EVENTS_event_type_fk, therm_event->event_type_fk);
 
-    record = db_insert_into(cursor, db_field);
+    db_insert_into(cursor, db_field);
     therm_event_clear(therm_event);
-    return record;
+    return cursor;
 }
 
 __db_cursor therm_event_find(unsigned char id)
